@@ -18,9 +18,6 @@
 3. Run Integration Tests
     - Single/Multi Container Complex Workflow
 
-#
-## [Goback..](./index.md)
-
 ## 2.3. Docker Image Hierarchy 
 
 1. Create a _**Base Image**_ for each application (Ops Team)

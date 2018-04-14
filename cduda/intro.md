@@ -15,7 +15,7 @@
 - Smaller Changes = Less Risk
 - Continuous Deploy
     - To at least one environment
-    - Always deployng means you get much better at deployments
+    - Always deploying means you get much better at deployments
 - Small scope of change
     - Easier to deploy
     - Easier to rollback if necessary
@@ -93,7 +93,7 @@
 - Production Readiness
 - Automation and Consistency
 
-### Cultural Work
+### Cultural Factor
 - DevOps are made of **people**
 
 ## 1.4. Why Docker?
