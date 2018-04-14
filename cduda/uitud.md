@@ -39,5 +39,25 @@
 1. Create the _**Base Image**_ using a **_Official Image_** from Docker Official Repositories
 2. Create the **_Organizational Parent Images_** children of one **_Official Images_**
 
+### Example:
+
+```Docker
+FROM ubuntu:trusty
+MAINTAINER Anderson Marques <anderson.mo.carvalho@gmail.com>
+
+# Prevent dpkg errors
+ENV TERM=xterm-256color
+
+# Set mirrors to the country nearest to me
+RUN set -i "s/http:\/\/archive./http:\/\/br.archive./g" /etc/apt/sources.list
+
+# Install Python runtime
+RUN apt-get update && \
+    apt-get install -y \
+    -o APT::Install-Recommend=false \
+    -o APT::Install-Suggests=false \
+    python python-virtualenv
+```
+
 #
 ## [Goback..](./index.md)
