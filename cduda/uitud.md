@@ -64,5 +64,28 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 ```
 
+## `entrypoint.sh` Example:
+
+```sh
+#!/bin/bash
+apt install custom-package
+# Does not create a process. Accept other inline commands
+exec $@
+```
+
+## Command executed after the entrypoint: 
+```bash
+$ entrypoint.sh mvn teste 
+```
+
+## With `exec $@`
+
+It enables the execution of the Entrypoint Script and pass the control of the PID 1 to the Application Process and finish. When the Docker Deamon tries to stop de container, it sends a SIGTERM signal, and as the PID 1 is associated to the Application Process, it allows the Application Process to terminate gracefully any required clean up.
+
+## Without `exec $@`
+
+The Entrypoint Script will not pass the control of the PID 1 to the Application Process and finish. PID will continue and the Application Process will receive another PID. Two process will be running. When the Docker Deamon tries to stop de container, it sends a SIGTERM signal to the PID 1, and as the PID 1 is associated to the Entrypoint Process, the entrypoint process will finish and only after 10 seconds the Docker deamon will send a STOP signal to all running process killing the container in not a gracefully manner.
+
+
 #
 ## [Goback..](./index.md)
