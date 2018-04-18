@@ -2,6 +2,8 @@
 
 ## Beginner
 
+### [Introduction to Kubernetes](./introduction-to-kubernetes/index.md)
+
 ## Intermediate
 
 ## Advanced
